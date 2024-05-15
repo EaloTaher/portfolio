@@ -17,6 +17,16 @@ export default {
         subtitle : "rgba(161,161,170)",
         header : 'rgb(39,39,42)',
         specialBlue: "rgb(93,188,252)"
+      },
+      keyframes: {
+        popup: {
+          '0%': { scale: '0' },
+          '50%': { scale: '1.2' },
+          '100%': {scale: "1"}
+        }
+      },
+      animation: {
+        popup: 'popup 0.78s 1',
       }
     },
   },
