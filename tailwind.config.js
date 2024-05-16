@@ -16,7 +16,9 @@ export default {
         title: "rgb(244,244,245)",
         subtitle : "rgba(161,161,170)",
         header : 'rgb(39,39,42)',
-        specialBlue: "rgb(93,188,252)"
+        specialBlue: "rgb(93,188,252)",
+        specialCyan: "rgb(93,188,252)",
+        iconHover: "#d4d4d8"
       },
       keyframes: {
         popup: {
@@ -27,6 +29,10 @@ export default {
       },
       animation: {
         popup: 'popup 0.78s 1',
+      },
+      fontSize:{
+        h1Title: ["2.85rem","3.3rem"]
+        
       }
     },
   },

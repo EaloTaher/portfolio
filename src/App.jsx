@@ -5,11 +5,11 @@ import Contact from "./components/4-contact/Contact";
 import Footer from "./components/5-footer/Footer";
 
 function App() {
-  const hrStyle = "my-10 border border-borderPrimary";
+  const hrStyle =
+    "my-10 border border-borderPrimary w-[calc(100%+10rem)] -ml-[5rem]";
   return (
-    <div className=" m-auto w-[80%]  border-2 border-borderPrimary  bg-secondary text-white">
+    <div className=" m-auto w-[80%] max-sm:w-[98%]  border-2 border-borderPrimary  bg-secondary text-white px-20 max-sm:px-5 max-lg:w-[90%]">
       <Header />
-      <hr className={`${hrStyle}`} />
       <Hero />
       <hr className={`${hrStyle}`} />
       <Main />

@@ -32,7 +32,7 @@ const Header = () => {
         <span className="icon-moon  text-2xl     " />
       </button>
       {showModal && (
-        <div className="fixed inset-0  bg-[rgb(40,40,48)] opacity-95">
+        <div className="fixed inset-0  bg-[rgb(40,40,48)] opacity-95 z-10">
           <div className="w-[85%] m-auto mt-8 rounded-2xl px-6 pt-4 pb-0 bg-secondary  animate-popup">
             <ul>
               <li className="text-right -mb-4">
