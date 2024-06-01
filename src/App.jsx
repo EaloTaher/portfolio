@@ -8,7 +8,10 @@ function App() {
   const hrStyle =
     "my-10 border border-borderPrimary w-[calc(100%+10rem)] -ml-[5rem]";
   return (
-    <div className=" m-auto w-[80%] max-sm:w-[98%]  border-2 border-borderPrimary  bg-secondary text-white px-20 max-sm:px-5 max-lg:w-[90%]">
+    <div
+      id="up"
+      className=" m-auto w-[80%] max-sm:w-[98%]  border-2 border-borderPrimary  bg-secondary text-white px-20 max-sm:px-5 max-lg:w-[90%]"
+    >
       <Header />
       <Hero />
       <hr className={`${hrStyle}`} />
@@ -17,6 +20,10 @@ function App() {
       <Contact />
       <hr className={`${hrStyle}`} />
       <Footer />
+      {/* Scroll to top button */}
+      <a href="#up">
+        <button className=" icon-arrow-up fixed bg-[rgba(25,118,210,1)] w-10 h-10  rounded-full bottom-8  right-[3%] hover:bg-[rgba(25,118,210,0.8)]" />
+      </a>
     </div>
   );
 }

@@ -1,15 +1,36 @@
+import { useState } from "react";
+
 const Main = () => {
-  const leftButtons = ["all projects", "React & Tailwind", "Node & Express"];
+  const leftButtons = ["React & Tailwind", "Node & Express"];
+  const [active, setActive] = useState("all");
 
   return (
     <main className="flex gap-12 items-start max-[700px]:flex-col max-[700px]:items-center ">
       <section className=" flex flex-col gap-3 max-[700px]:flex-row max-[700px]:flex-wrap max-[700px]:justify-center">
+        <button
+          className={`${
+            active === "all" &&
+            "border border-specialBlue opacity-100 font-semibold tracking-[0.6px] py-3 rounded "
+          } w-44 px-3 py-2 bg-[rgba(36,37,46,1)] text-lg capitalize opacity-50 border  hover:opacity-100 duration-300 
+              max-[700px]:px-1 max-[700px]:text-base max-[700px]:w-36`}
+          onClick={() => {
+            setActive("all");
+          }}
+        >
+          all projects
+        </button>
+
         {leftButtons.map((btn, key) => (
           <button
             key={key}
-            className=" w-44 px-3 py-2 bg-[rgba(36,37,46,1)] text-lg capitalize opacity-50 border first:border first:border-specialBlue
-             first:opacity-100 first:font-semibold  first: tracking-[0.6px] first:py-3 rounded hover:opacity-100 duration-300 
-              max-[700px]:px-1 max-[700px]:text-base max-[700px]:w-36"
+            className={`${
+              active === `${key}` &&
+              "border border-specialBlue opacity-100 font-semibold tracking-[0.6px] py-3 rounded "
+            } w-44 px-3 py-2 bg-[rgba(36,37,46,1)] text-lg capitalize opacity-50 border  hover:opacity-100 duration-300 
+              max-[700px]:px-1 max-[700px]:text-base max-[700px]:w-36`}
+            onClick={() => {
+              setActive(`${key}`);
+            }}
           >
             {btn}
           </button>
