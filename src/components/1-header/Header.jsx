@@ -1,6 +1,39 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Header = () => {
+  const [themeCounter, setthemeCounter] = useState(true);
+  const selectedTheme = localStorage.getItem("theme");
+  useEffect(() => {
+    // If the user has selected a theme, use that
+    if (selectedTheme) {
+      if (selectedTheme == "dark") {
+        document.body.classList.remove("light");
+        document.body.classList.add(selectedTheme);
+      } else if (selectedTheme == "light") {
+        document.body.classList.remove("dark");
+        document.body.classList.add(selectedTheme);
+      }
+
+      //Else If the users OS preferences prefers dark mode
+    } else if (window.matchMedia("(prefers-color-scheme: dark)")) {
+      document.body.classList.add("dark");
+
+      //Else use light mode
+    } else {
+      document.body.classList.add("light");
+    }
+  }, [themeCounter]);
+  function handleTheme() {
+    const themeSelected = localStorage.getItem("theme");
+    if (!themeSelected) {
+      localStorage.setItem("theme", "dark");
+    } else if (themeSelected == "dark") {
+      localStorage.setItem("theme", "light");
+    } else {
+      localStorage.setItem("theme", "dark");
+    }
+    setthemeCounter(!themeCounter);
+  }
   const navLinks = ["About", "Articles", "Projects", "Speaking", "Contact"];
   const [showModal, setShowModal] = useState(false);
   return (
@@ -28,8 +61,21 @@ const Header = () => {
           ))}
         </ul>
       </nav>
-      <button className=" size-10  bg-header  rounded-full hover:border text-subtitle hover:text-title border-[rgba(244,165,96,0.249)] duration-200 active:scale-90">
-        <span className="icon-moon  text-2xl     " />
+      <button
+        onClick={() => {
+          handleTheme();
+        }}
+        className=" size-10  bg-header  rounded-full hover:border text-subtitle hover:text-title border-[rgba(244,165,96,0.249)] duration-200 active:scale-90"
+      >
+        <span
+          className={`${
+            selectedTheme
+              ? selectedTheme == "dark"
+                ? "icon-moon"
+                : "icon-sun"
+              : "icon-moon"
+          }  text-2xl  `}
+        />
       </button>
       {showModal && (
         <div className="fixed inset-0  bg-[rgb(40,40,48)] opacity-95 z-10">

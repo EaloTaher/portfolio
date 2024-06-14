@@ -9,16 +9,21 @@ export default {
         Roboto: ["Roboto", "sans-serif"]
         
       },
+
       colors:{
-        primary : "#000",
-        secondary : "rgb(24,24,27)",
-        borderPrimary : "rgba(63, 63, 70, 0.4)",
-        title: "rgb(244,244,245)",
-        subtitle : "rgba(161,161,170)",
-        header : 'rgb(39,39,42)',
-        specialBlue: "rgb(93,188,252)",
-        specialCyan: "rgb(93,188,252)",
-        iconHover: "#d4d4d8"
+        
+        primary : "var(--primary)",
+        secondary : "rgb(var(--secondary))",
+        borderPrimary : "rgba(var(--secondary))",
+        title: "rgba(var(--title))",
+        subtitle : "rgba(var(--subtitle))",
+        header : 'rgb(var(--header))',
+        specialBlue: "rgb(var(--specialBlue))",
+        specialCyan: "rgb(var(--specialCyan))",
+        iconHover: "var(--iconHover)",
+        cardBorder: "rgb(var(--cardBorder))",
+        cardBorderColor: "rgba(var(--cardBorderColor))",
+        inputText: "var(--inputText)",
       },
       keyframes: {
         popup: {

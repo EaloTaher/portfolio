@@ -27,3 +27,33 @@ html {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.dark {
+  --primary: #000;
+  --secondary: 24, 24, 27;
+  --borderPrimary: 63, 63, 70, 0.4;
+  --title: 244, 244, 245;
+  --subtitle: 161, 161, 170;
+  --header: 39, 39, 42;
+  --specialBlue: 93, 188, 252;
+  --specialCyan: 93, 188, 252;
+  --iconHover: #d4d4d8;
+  --cardBorderColor: 93, 188, 252, 0.3;
+  --cardBorder: 93, 188, 252;
+  --inputText: #fff;
+}
+
+.light {
+  --primary: #fafafa;
+  --secondary: #ffffff;
+  --borderPrimary: 202, 202, 202, 0.518;
+  --title: 39, 39, 42;
+  --subtitle: 82, 82, 91;
+  --header: 253, 253, 253;
+  --specialBlue: 0, 0, 0;
+  --specialCyan: 0, 0, 0;
+  --iconHover: #333;
+  --cardBorder: none;
+  --cardBorderColor: 93, 188, 252, 0;
+  --inputText: #000;
+}

@@ -1,8 +1,23 @@
 import { useState } from "react";
-
+import { projects } from "./myProject";
 const Main = () => {
-  const leftButtons = ["React & Tailwind", "Node & Express"];
+  const leftButtons = [
+    { title: "HTML & CSS", category: "css" },
+    { title: "JavaScript", category: "js" },
+    { title: "React & MUI", category: "react" },
+    { title: "Node & Express", category: "node" },
+  ];
   const [active, setActive] = useState("all");
+
+  const [filteredProjects, setfilteredProjects] = useState(projects);
+
+  function handleClick(category) {
+    setfilteredProjects(
+      projects.filter((item) => {
+        return item.category.includes(category) === true;
+      })
+    );
+  }
 
   return (
     <main className="flex gap-12 items-start max-[700px]:flex-col max-[700px]:items-center ">
@@ -15,9 +30,10 @@ const Main = () => {
               max-[700px]:px-1 max-[700px]:text-base max-[700px]:w-36`}
           onClick={() => {
             setActive("all");
+            setfilteredProjects(projects);
           }}
         >
-          all projects
+          All Projects
         </button>
 
         {leftButtons.map((btn, key) => (
@@ -30,21 +46,24 @@ const Main = () => {
               max-[700px]:px-1 max-[700px]:text-base max-[700px]:w-36`}
             onClick={() => {
               setActive(`${key}`);
+              handleClick(btn.category);
             }}
           >
-            {btn}
+            {btn.title}
           </button>
         ))}
       </section>
-      <section className=" border border-red-600 flex flex-wrap gap-x-4 gap-y-8 justify-center">
-        {["aa", "bb", "cc", "dd"].map((item, key) => (
+      <section className=" border border-red-600 flex flex-wrap gap-x-4 gap-y-8 justify-center grow">
+        {filteredProjects.map((item, key) => (
           <article
             key={key}
-            className="border-[rgba(93,188,252,0.3)] border-[3px] rounded hover:border-specialBlue duration-300 hover:rotate-1 hover:scale-[1.02] hover:cursor-pointer bg-gradient-to-t from-[rgba(255,255,255,0.05)] to bg-[rgba(255,255,255,0.05)]"
+            className="border-[3px]  border-cardBorderColor rounded hover:border-cardBorder  hover:bg-slate-100 duration-300 hover:rotate-1 hover:scale-[1.02] hover:cursor-pointer bg-gradient-to-t from-[rgba(255,255,255,0.05)] to bg-[rgba(255,255,255,0.05)] shadow-lg"
           >
-            <img src="./landing1.png" className=" w-72 rounded" />
+            <img src={item.imgPath} className=" w-72 rounded" />
             <div className="w-72  py-3 px-2">
-              <h1 className="text-title font-bold ">Landing Page 1</h1>
+              <h1 className="text-title font-bold capitalize">
+                {item.projectTitle}
+              </h1>
               <p className="text-subtitle text-sm mt-2 mb-5">
                 f type and scrambled it to make a type specimen book. It has
                 survived not only five centuries, but also the leap into

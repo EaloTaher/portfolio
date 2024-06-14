@@ -22,7 +22,7 @@ const Contact = () => {
               name=""
               id="email"
               required
-              className=" mt-4 max-[500px]:w-full w-64 bg-[rgba(63,63,70,0.15)] border border-[rgb(63,63,70)]  py-2 px-4 max-[500px]:ml-0 ml-4 rounded focus:border-[rgb(45,212,191)] hover:border-[rgb(45,212,191)] outline-none duration-200  resize-y "
+              className=" text-inputText mt-4 max-[500px]:w-full w-64 bg-primary border border-[rgb(63,63,70)]  py-2 px-4 max-[500px]:ml-0 ml-4 rounded focus:border-specialBlue hover:border-specialBlue outline-none duration-200  resize-y "
             />
           </div>
           <div className="mt-6 flex items-center  max-[500px]:flex-col max-[500px]:items-start">
@@ -33,7 +33,7 @@ const Contact = () => {
               required
               name="message"
               id="message"
-              className=" mt-4 max-[500px]:w-full max-[500px]:ml-0 w-64 bg-[rgba(63,63,70,0.15)] border border-[rgb(63,63,70)]  py-2 px-4 ml-4 rounded focus:border-[rgb(45,212,191)] hover:border-[rgb(45,212,191)] outline-none duration-200 min-h-36 resize-y "
+              className=" mt-4 max-[500px]:w-full max-[500px]:ml-0 w-64 bg-primary text-inputText border border-[rgb(63,63,70)]  py-2 px-4 ml-4 rounded focus:border-specialBlue hover:border-specialBlue outline-none duration-200 min-h-36 resize-y "
             ></textarea>
           </div>
           <button
