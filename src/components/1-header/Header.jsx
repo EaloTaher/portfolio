@@ -65,14 +65,14 @@ const Header = () => {
         onClick={() => {
           handleTheme();
         }}
-        className=" size-10  bg-header  rounded-full hover:border text-subtitle hover:text-title border-[rgba(244,165,96,0.249)] duration-200 active:scale-90"
+        className=" size-10  bg-header shadow-lg rounded-full hover:border text-subtitle hover:text-title border-[rgba(244,165,96,0.249)] duration-200 active:scale-90"
       >
         <span
           className={`${
             selectedTheme
               ? selectedTheme == "dark"
                 ? "icon-moon"
-                : "icon-sun"
+                : "icon-sun text-yellow-500 "
               : "icon-moon"
           }  text-2xl  `}
         />
