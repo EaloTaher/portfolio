@@ -1,23 +1,30 @@
 import Lottie from "lottie-react";
 import developer from "../../../public/animation/developer.json";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 const Hero = () => {
   const soicalIcons = ["icon-instagram", "icon-github", "icon-linkedin"];
-  const lottieRef = useRef();
   return (
     <section className="flex mt-12">
       <div className=" flex-grow">
-        <div className="flex items-end gap-3">
-          <img
+        <div className="flex items-end gap-3 min-h-24">
+          <motion.img
             src="./ealam_photo.png"
             className="w-[88px] border border-orange-400 rounded-full p-[1px] shadow-[1px_1px_40px_rgba(203,200,200,0.58)_inset]"
+            initial={{ transform: "scale(0)" }}
+            animate={{ transform: "scale(1.1)" }}
+            transition={{ damping: 5, type: "spring", stiffness: 100 }}
           />
           <div className="icon-verified text-specialCyan text-lg mb-[0.1rem]" />
         </div>
-        <h1 className=" text-h1Title text-title my-6  font-semibold ">
+        <motion.h1
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2 }}
+          className=" text-h1Title text-title my-6  font-semibold "
+        >
           Front-End Programmer, Instrumentation Technician and Calisthenics
           Athlete.
-        </h1>
+        </motion.h1>
         <p className="text-subtitle text-sm mb-8 ">
           I&apos;m Ealam Taher, A Front-End programmer based in Kirkuk-Iraq. I
           create Reliable and scalable front end websites.
@@ -42,17 +49,8 @@ const Hero = () => {
           ))}
         </div>
       </div>
-      <div className="border border-red-600 max-[1250px]:hidden">
-        <Lottie
-          lottieRef={lottieRef}
-          animationData={developer}
-          // doesn't work
-          // lottiereact.com
-          onLoadedImages={() => {
-            lottieRef.current.setSpeed(0.5);
-          }}
-          className=" w-full translate-x-14  -translate-y-16"
-        />
+      <div className=" max-[1250px]:hidden">
+        <Lottie animationData={developer} className=" w-full " />
       </div>
     </section>
   );

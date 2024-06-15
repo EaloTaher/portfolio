@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { projects } from "./myProject";
+import { AnimatePresence, motion } from "framer-motion";
 const Main = () => {
   const leftButtons = [
     { title: "HTML & CSS", category: "css" },
@@ -53,37 +54,43 @@ const Main = () => {
           </button>
         ))}
       </section>
-      <section className=" border border-red-600 flex flex-wrap gap-x-4 gap-y-8 justify-center grow">
-        {filteredProjects.map((item, key) => (
-          <article
-            key={key}
-            className="border-[3px]  border-cardBorderColor rounded hover:border-cardBorder  hover:bg-slate-100 duration-300 hover:rotate-1 hover:scale-[1.02] hover:cursor-pointer bg-gradient-to-t from-[rgba(255,255,255,0.05)] to bg-[rgba(255,255,255,0.05)] shadow-lg"
-          >
-            <img src={item.imgPath} className=" w-72 rounded" />
-            <div className="w-72  py-3 px-2">
-              <h1 className="text-title font-bold capitalize">
-                {item.projectTitle}
-              </h1>
-              <p className="text-subtitle text-sm mt-2 mb-5">
-                f type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic
-              </p>
-              <div className="flex justify-between">
-                <div className="flex gap-3 text-xl text-subtitle">
-                  <div className="icon-link hover:text-[1.5rem]  hover:text-iconHover" />
-                  <div className="icon-github hover:text-[1.5rem]  hover:text-iconHover" />
+      <section className=" flex flex-wrap gap-x-4 gap-y-8 justify-center grow">
+        <AnimatePresence>
+          {filteredProjects.map((item, key) => (
+            <motion.article
+              layout
+              initial={{ transform: "scale(0)" }}
+              animate={{ transform: "scale(1)" }}
+              transition={{ type: "spring", damping: 8, stiffness: 50 }}
+              key={key}
+              className="border-[3px]  border-cardBorderColor rounded hover:border-cardBorder  hover:bg-slate-100 duration-300 hover:rotate-1 hover:scale-[1.02] hover:cursor-pointer bg-gradient-to-t from-[rgba(255,255,255,0.05)] to bg-[rgba(255,255,255,0.05)] shadow-lg"
+            >
+              <img src={item.imgPath} className=" w-72 rounded" />
+              <div className="w-72  py-3 px-2">
+                <h1 className="text-title font-bold capitalize">
+                  {item.projectTitle}
+                </h1>
+                <p className="text-subtitle text-sm mt-2 mb-5">
+                  f type and scrambled it to make a type specimen book. It has
+                  survived not only five centuries, but also the leap into
+                  electronic
+                </p>
+                <div className="flex justify-between">
+                  <div className="flex gap-3 text-xl text-subtitle">
+                    <div className="icon-link hover:text-[1.5rem]  hover:text-iconHover" />
+                    <div className="icon-github hover:text-[1.5rem]  hover:text-iconHover" />
+                  </div>
+                  <a
+                    href=""
+                    className="text-specialBlue flex items-center gap-1 mr-1"
+                  >
+                    more <span className="icon-arrow-right " />
+                  </a>
                 </div>
-                <a
-                  href=""
-                  className="text-specialBlue flex items-center gap-1 mr-1"
-                >
-                  more <span className="icon-arrow-right " />
-                </a>
               </div>
-            </div>
-          </article>
-        ))}
+            </motion.article>
+          ))}
+        </AnimatePresence>
       </section>
     </main>
   );

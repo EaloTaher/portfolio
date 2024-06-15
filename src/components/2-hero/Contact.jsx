@@ -6,7 +6,7 @@ const Contact = () => {
   const [state, handleSubmit] = useForm("mjvnnavg");
   return (
     <section>
-      <div className="">
+      <div className="border border-red-800">
         <h1 className="2.1rem text-title mb-4 text-4xl font-semibold">
           <span className="icon-email mr-3 text-subtitle text-2xl" />
           Contact us
@@ -16,7 +16,7 @@ const Contact = () => {
           new
         </p>
       </div>
-      <div className=" flex justify-between items-center ">
+      <div className="border flex justify-between items-center border-red-800">
         <form
           className=" max-[500px]:flex max-[500px]:flex-col max-[500px]:w-[90%]"
           onSubmit={handleSubmit}
