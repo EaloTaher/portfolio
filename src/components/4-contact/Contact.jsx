@@ -1,5 +1,7 @@
 import { ValidationError, useForm } from "@formspree/react";
-
+import Lottie from "lottie-react";
+import successfullyDone from "../../../public/animation/successfully-done.json";
+import ContactUS from "../../../public/animation//contactUs.json";
 const Contact = () => {
   const [state, handleSubmit] = useForm("mjvnnavg");
   return (
@@ -14,7 +16,7 @@ const Contact = () => {
           new
         </p>
       </div>
-      <div className="border border-red-800">
+      <div className="border flex justify-between items-center border-red-800">
         <form
           className=" max-[500px]:flex max-[500px]:flex-col max-[500px]:w-[90%]"
           onSubmit={handleSubmit}
@@ -28,6 +30,7 @@ const Contact = () => {
               name="email"
               id="email"
               required
+              autoComplete="off"
               className=" text-inputText mt-4 max-[500px]:w-full w-64 bg-primary border border-[rgb(63,63,70)]  py-2 px-4 max-[500px]:ml-0 ml-4 rounded focus:border-specialBlue hover:border-specialBlue outline-none duration-200  resize-y "
             />
             <ValidationError
@@ -62,13 +65,23 @@ const Contact = () => {
             {state.submitting ? "Submitting" : "Submit"}
           </button>
           {state.succeeded && (
-            <p className="text-subtitle mt-4 text-lg">
+            <p className="text-subtitle mt-2 text-lg flex items-center">
+              <Lottie
+                loop={false}
+                className=" h-14 "
+                animationData={successfullyDone}
+              />
               Your message has been sent successfully
             </p>
           )}
         </form>
         {/* For the animation */}
-        <div className=" max-[700px]: hidden"></div>
+        <div className="">
+          <Lottie
+            className=" max-[1300px]:hidden h-[500px]"
+            animationData={ContactUS}
+          />
+        </div>
       </div>
     </section>
   );

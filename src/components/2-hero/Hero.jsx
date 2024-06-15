@@ -1,5 +1,9 @@
+import Lottie from "lottie-react";
+import developer from "../../../public/animation/developer.json";
+import { useRef } from "react";
 const Hero = () => {
   const soicalIcons = ["icon-instagram", "icon-github", "icon-linkedin"];
+  const lottieRef = useRef();
   return (
     <section className="flex mt-12">
       <div className=" flex-grow">
@@ -38,7 +42,17 @@ const Hero = () => {
           ))}
         </div>
       </div>
-      <div className="border border-red-600">right</div>
+      <div className="border border-red-600">
+        <Lottie
+          lottieRef={lottieRef}
+          animationData={developer}
+          // doesn't work
+          onLoadedImages={() => {
+            lottieRef.current.setSpeed(0.5);
+          }}
+          className=" w-full translate-x-14  -translate-y-16"
+        />
+      </div>
     </section>
   );
 };
