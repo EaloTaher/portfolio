@@ -42,11 +42,12 @@ const Hero = () => {
           ))}
         </div>
       </div>
-      <div className="border border-red-600">
+      <div className="border border-red-600 max-[1250px]:hidden">
         <Lottie
           lottieRef={lottieRef}
           animationData={developer}
           // doesn't work
+          // lottiereact.com
           onLoadedImages={() => {
             lottieRef.current.setSpeed(0.5);
           }}
