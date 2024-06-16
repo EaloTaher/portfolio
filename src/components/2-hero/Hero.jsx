@@ -5,7 +5,10 @@ const Hero = () => {
   const soicalIcons = ["icon-instagram", "icon-github", "icon-linkedin"];
 
   return (
-    <section className="flex mt-12 min-h-[350px]" id="About">
+    <section
+      className="flex mt-12 min-h-[350px] max-[1240px]:min-h-[400px] max-[963px]:min-h-[430px] max-[800px]:min-h-[480px] max-[700px]:min-h-[550px] max-[650px]:min-h-[500px] max-[529px]:min-h-[525px] max-[490px]:min-h-[550px] max-[440px]:min-h-[580px]"
+      id="About"
+    >
       <div className=" flex-grow">
         <div className="flex items-end gap-3 min-h-24">
           <motion.img
