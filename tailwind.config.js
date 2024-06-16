@@ -24,6 +24,10 @@ export default {
         cardBorder: "rgb(var(--cardBorder))",
         cardBorderColor: "rgba(var(--cardBorderColor))",
         inputText: "var(--inputText)",
+        projectCardBg: "rgba(var(--projectCardBg))",
+        hrBorderColor: "rgba(var(--hrBorderColor))",
+        buttonBg : "rgba(var(--buttonBg))",
+        buttonText : "var(--buttonText)"
       },
       keyframes: {
         popup: {

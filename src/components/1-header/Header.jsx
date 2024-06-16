@@ -3,24 +3,31 @@ import { useEffect, useState } from "react";
 const Header = () => {
   const [themeCounter, setthemeCounter] = useState(true);
   const selectedTheme = localStorage.getItem("theme");
+
   useEffect(() => {
     // If the user has selected a theme, use that
+    //The x logo is for the x logo inverts it  with the theme not best way but loved to try it
     if (selectedTheme) {
+      var xLogo = document.querySelector("#xLogo");
       if (selectedTheme == "dark") {
         document.body.classList.remove("light");
         document.body.classList.add(selectedTheme);
+        xLogo.classList.add("invert");
       } else if (selectedTheme == "light") {
         document.body.classList.remove("dark");
         document.body.classList.add(selectedTheme);
+        xLogo.classList.remove("invert");
       }
 
       //Else If the users OS preferences prefers dark mode
     } else if (window.matchMedia("(prefers-color-scheme: dark)")) {
       document.body.classList.add("dark");
+      xLogo.classList.add("invert");
 
       //Else use light mode
     } else {
       document.body.classList.add("light");
+      xLogo.classList.remove("invert");
     }
   }, [themeCounter]);
   function handleTheme() {
@@ -34,7 +41,7 @@ const Header = () => {
     }
     setthemeCounter(!themeCounter);
   }
-  const navLinks = ["About", "Articles", "Projects", "Speaking", "Contact"];
+  const navLinks = ["About", "Projects", "Contact"];
   const [showModal, setShowModal] = useState(false);
   return (
     <header className="flex flex-row items-center justify-between px-10 mt-5  ">
@@ -52,7 +59,7 @@ const Header = () => {
           {navLinks.map((item, key) => (
             <li key={key}>
               <a
-                href=""
+                href={`#${item}`}
                 className=" text-title opacity-90 text-sm font-medium hover:opacity-100 hover:text-[0.92rem] hover:text-specialBlue duration-200 "
               >
                 {item}
@@ -94,7 +101,15 @@ const Header = () => {
                   key={key}
                   className="border-b border-solid border-borderPrimary pb-3 pt-2 last:border-none hover:opacity-100 hover:text-[0.92rem] hover:text-specialBlue hover:cursor-pointer"
                 >
-                  <a className="text-base">{item}</a>
+                  <a
+                    onClick={() => {
+                      setShowModal(false);
+                    }}
+                    className="text-base"
+                    href={`#${item}`}
+                  >
+                    {item}
+                  </a>
                 </li>
               ))}
             </ul>

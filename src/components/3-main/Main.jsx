@@ -21,13 +21,16 @@ const Main = () => {
   }
 
   return (
-    <main className="flex gap-12 items-start max-[700px]:flex-col max-[700px]:items-center ">
+    <main
+      className="flex gap-12 items-start max-[700px]:flex-col max-[700px]:items-center pt-10"
+      id="Projects"
+    >
       <section className=" flex flex-col gap-3 max-[700px]:flex-row max-[700px]:flex-wrap max-[700px]:justify-center">
         <button
           className={`${
             active === "all" &&
             "border border-specialBlue opacity-100 font-semibold tracking-[0.6px] py-3 rounded "
-          } w-44 px-3 py-2 bg-[rgba(36,37,46,1)] text-lg capitalize opacity-50 border  hover:opacity-100 duration-300 
+          } w-44 px-3 py-2 text-buttonText  bg-buttonBg text-lg capitalize opacity-50 border  hover:opacity-100 duration-300 
               max-[700px]:px-1 max-[700px]:text-base max-[700px]:w-36`}
           onClick={() => {
             setActive("all");
@@ -42,8 +45,8 @@ const Main = () => {
             key={key}
             className={`${
               active === `${key}` &&
-              "border border-specialBlue opacity-100 font-semibold tracking-[0.6px] py-3 rounded "
-            } w-44 px-3 py-2 bg-[rgba(36,37,46,1)] text-lg capitalize opacity-50 border  hover:opacity-100 duration-300 
+              "border border-specialBlue   opacity-100 font-semibold tracking-[0.6px] py-3 rounded "
+            } w-44 px-3 py-2 bg-buttonBg text-buttonText text-lg capitalize opacity-50 border  hover:opacity-100 duration-300 
               max-[700px]:px-1 max-[700px]:text-base max-[700px]:w-36`}
             onClick={() => {
               setActive(`${key}`);
@@ -63,29 +66,30 @@ const Main = () => {
               animate={{ transform: "scale(1)" }}
               transition={{ type: "spring", damping: 8, stiffness: 50 }}
               key={key}
-              className="border-[3px]  border-cardBorderColor rounded hover:border-cardBorder  hover:bg-slate-100 duration-300 hover:rotate-1 hover:scale-[1.02] hover:cursor-pointer bg-gradient-to-t from-[rgba(255,255,255,0.05)] to bg-[rgba(255,255,255,0.05)] shadow-lg"
             >
-              <img src={item.imgPath} className=" w-72 rounded" />
-              <div className="w-72  py-3 px-2">
-                <h1 className="text-title font-bold capitalize">
-                  {item.projectTitle}
-                </h1>
-                <p className="text-subtitle text-sm mt-2 mb-5">
-                  f type and scrambled it to make a type specimen book. It has
-                  survived not only five centuries, but also the leap into
-                  electronic
-                </p>
-                <div className="flex justify-between">
-                  <div className="flex gap-3 text-xl text-subtitle">
-                    <div className="icon-link hover:text-[1.5rem]  hover:text-iconHover" />
-                    <div className="icon-github hover:text-[1.5rem]  hover:text-iconHover" />
+              <div className="border-[3px]  border-cardBorderColor rounded hover:border-cardBorder hover:bg-projectCardBg  duration-300 hover:rotate-1 hover:scale-[1.02] hover:cursor-pointer bg-gradient-to-t from-[rgba(255,255,255,0.05)] to bg-[rgba(255,255,255,0.05)] shadow-lg">
+                <img src={item.imgPath} className=" w-72 rounded" />
+                <div className="w-72  py-3 px-2">
+                  <h1 className="text-title font-bold capitalize">
+                    {item.projectTitle}
+                  </h1>
+                  <p className="text-subtitle text-sm mt-2 mb-5">
+                    f type and scrambled it to make a type specimen book. It has
+                    survived not only five centuries, but also the leap into
+                    electronic
+                  </p>
+                  <div className="flex justify-between">
+                    <div className="flex gap-3 text-xl text-subtitle">
+                      <div className="icon-link hover:text-[1.5rem]  hover:text-iconHover" />
+                      <div className="icon-github hover:text-[1.5rem]  hover:text-iconHover" />
+                    </div>
+                    <a
+                      href=""
+                      className="text-specialBlue flex items-center gap-1 mr-1"
+                    >
+                      more <span className="icon-arrow-right " />
+                    </a>
                   </div>
-                  <a
-                    href=""
-                    className="text-specialBlue flex items-center gap-1 mr-1"
-                  >
-                    more <span className="icon-arrow-right " />
-                  </a>
                 </div>
               </div>
             </motion.article>

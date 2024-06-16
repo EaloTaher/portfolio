@@ -6,7 +6,7 @@ const Contact = () => {
   const [state, handleSubmit] = useForm("mjvnnavg");
   return (
     <section>
-      <div className="">
+      <div className="" id="Contact">
         <h1 className="2.1rem text-title mb-4 text-4xl font-semibold">
           <span className="icon-email mr-3 text-subtitle text-2xl" />
           Contact us

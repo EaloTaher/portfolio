@@ -32,6 +32,7 @@ html {
   --primary: #000;
   --secondary: 24, 24, 27;
   --borderPrimary: 63, 63, 70, 0.4;
+  --hrBorderColor: 0, 0, 0, 0.15;
   --title: 244, 244, 245;
   --subtitle: 161, 161, 170;
   --header: 39, 39, 42;
@@ -41,12 +42,16 @@ html {
   --cardBorderColor: 93, 188, 252, 0.3;
   --cardBorder: 93, 188, 252;
   --inputText: #fff;
+  --projectCardBg: 247, 247, 247, 0.2;
+  --buttonBg: 36, 37, 46, 1;
+  --buttonText: #fff;
 }
 
 .light {
-  --primary: #fafafa;
-  --secondary: #ffffff;
+  --primary: #fff;
+  --secondary: 250, 250, 250;
   --borderPrimary: 202, 202, 202, 0.518;
+  --hrBorderColor: 0, 0, 0, 0.01;
   --title: 39, 39, 42;
   --subtitle: 82, 82, 91;
   --header: 253, 253, 253;
@@ -55,5 +60,9 @@ html {
   --iconHover: #333;
   --cardBorder: none;
   --cardBorderColor: 93, 188, 252, 0;
+  --cardBorder: 93, 188, 252, 0;
   --inputText: #000;
+  --projectCardBg: 0, 0, 0, 0.1;
+  --buttonBg: 245, 245, 245, 1;
+  --buttonText: #000;
 }

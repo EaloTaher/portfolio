@@ -18,11 +18,11 @@ function App() {
 
   const [showScrollBtn, setShowScrollBtn] = useState(false);
   const hrStyle =
-    "my-10 border border-borderPrimary w-[calc(100%+10rem)] -ml-[5rem]";
+    "my-10 border border-hrBorderColor w-[calc(100%+10rem)] -ml-[5rem]";
   return (
     <div
       id="up"
-      className=" m-auto w-[80%] max-sm:w-[98%]  border-2 border-borderPrimary  bg-secondary text-white px-20 max-sm:px-5 max-lg:w-[90%]"
+      className=" m-auto w-[80%] max-sm:w-[98%]  border-2 border-hrBorderColor  bg-secondary text-white px-20 max-sm:px-5 max-lg:w-[90%]"
     >
       <Header />
       <Hero />
