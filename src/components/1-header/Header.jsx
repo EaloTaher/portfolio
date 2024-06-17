@@ -22,7 +22,7 @@ const Header = () => {
       //Else If the users OS preferences prefers dark mode
     } else if (window.matchMedia("(prefers-color-scheme: dark)")) {
       document.body.classList.add("dark");
-      xLogo.classList.add("invert");
+      xLogo?.classList.add("invert");
 
       //Else use light mode
     } else {
